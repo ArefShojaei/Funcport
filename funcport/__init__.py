@@ -1,3 +1,3 @@
-from functions import list, string
+from .functions import string, list
 
-__all__ = ["list", "string"]
+__all__ = ["string", "list"]
