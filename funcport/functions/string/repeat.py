@@ -1,4 +1,4 @@
-def repeat(text: str, length: int):
+def repeat(text: str, length: int) -> str:
     """
     @summary Repeat a string multiple times
     
@@ -10,9 +10,12 @@ def repeat(text: str, length: int):
         >>> repeat("Hello ", 2)
         "Hello Hello"
     """
-    result = ""
-    
-    for _ in range(0, length):
-        result += text
+    if not isinstance(text, str): raise TypeError("text should be string!")
 
-    return result
+    if not isinstance(length, int): raise TypeError("length should be int!")
+
+    if text == "" : raise ValueError("text should not be empty!")
+    
+    if length <= 0 : raise ValueError("length should not be zero or negative!")
+    
+    return text * length
