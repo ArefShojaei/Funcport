@@ -1,4 +1,4 @@
-def count(list: list) -> int:
+def count(input: list) -> int:
     """
     @summary Count occurrences of a substring
     
@@ -12,7 +12,15 @@ def count(list: list) -> int:
 
         >>> count(["a", "b"])
         2
-    """
-    for index, _ in enumerate(list): pass
 
-    return index + 1
+        >>> count([])
+        0
+    """
+    if not isinstance(input, list): raise TypeError("input should be list!")
+
+    count = 0
+
+    for _ in input:
+        count += 1
+    
+    return count
