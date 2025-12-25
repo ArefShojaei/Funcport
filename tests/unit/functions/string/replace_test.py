@@ -42,7 +42,7 @@ def test_replace_string(text: str, find: str, replace: str, expected: str):
     ("Hello world", "world", False, TypeError, "replace should be string!"),
 
 ])
-def test_repeat_validation(text: Any, find: Any, replace: Any, expected_exception: object, expected_message: str):
+def test_replace_validation(text: Any, find: Any, replace: Any, expected_exception: object, expected_message: str):
     with pytest.raises(expected_exception) as error:
         string.replace(text, find, replace)
 
