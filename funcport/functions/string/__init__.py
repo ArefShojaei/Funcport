@@ -4,6 +4,8 @@ from .repeat import repeat
 from .length import length
 from .join import join
 from .contains import contains
+from .explode import explode
+from .split import split
 
 __all__ = [
     "trim",
@@ -11,5 +13,7 @@ __all__ = [
     "repeat",
     "length",
     "join",
-    "contains"
+    "contains",
+    "explode",
+    "split"
 ]
