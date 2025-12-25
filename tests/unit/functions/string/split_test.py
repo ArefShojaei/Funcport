@@ -6,7 +6,8 @@ from typing import Any
 @pytest.mark.parametrize("text, expected", [
     ("Hello", ["H", "e", "l", "l", "o"]),
     ("Dev", ["D", "e", "v"]),
-    ("Unit test", ["U", "n", "i", "t", " ", "t", "e", "s", "t"])
+    ("Unit test", ["U", "n", "i", "t", " ", "t", "e", "s", "t"]),
+    ("", [])
 ])
 def test_split_full_string_to_list(text: str, expected: list):
     assert string.split(text) == expected
