@@ -15,4 +15,8 @@ def contains(text: str, search: str) -> bool:
         >>> contains("Hello World", "Python")
         False
     """
+    if not isinstance(text, str): raise TypeError("text should be string!")
+    
+    if not isinstance(search, str): raise TypeError("search should be string!")
+
     return True if re.search(search, text) else False
