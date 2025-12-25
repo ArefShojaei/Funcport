@@ -10,6 +10,10 @@ def length(text: str) -> int:
         >>> length("Hello")
         5
     """
+    if not isinstance(text, str): raise TypeError("text should be string!")
+
+    if not text: return 0
+
     for index, _ in enumerate(text): pass
 
     return index + 1
