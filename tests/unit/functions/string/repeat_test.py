@@ -31,7 +31,7 @@ def test_repeat_string(text: str, length: int, expected: str):
     ("hello", "5", TypeError, "length should be int!"),
     ("hello", None, TypeError, "length should be int!"),
 ])
-def test_repeat_empty_string(text: str, length: int, expected_exception: object, expected_message: str):
+def test_repeat_validation(text: str, length: int, expected_exception: object, expected_message: str):
     with pytest.raises(expected_exception) as error:
         string.repeat(text, length)
 
