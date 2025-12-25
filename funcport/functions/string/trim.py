@@ -18,6 +18,10 @@ def trim(text: str) -> str:
         >>> trim(" Hello ")
         "Hello"
     """
+    if not isinstance(text, str): raise TypeError("Invalid input data type!")
+    
+    if not len(text): return text
+
     pattern = r"^\s*|\s*$"
     empty_string = ""
 

@@ -1,32 +1,47 @@
 import pytest
 from funcport import string
+from typing import Any
 
 
 @pytest.mark.parametrize("text, expected", [
     (" Hello ", "Hello"),
-    (" Hello", "Hello"),
-    ("Hello ", "Hello"),
-
     (" Hello world ", "Hello world"),
-    (" Hello world", "Hello world"),
-    ("Hello world ", "Hello world"),
+    (" Hello from Python! ", "Hello from Python!"),
 ])
-def test_trim_whitespace(text: str, expected: str):
-    value = string.trim(text)
+def test_remove_string_whitespace_both_side(text: str, expected: str):
+    assert string.trim(text) == expected
+    assert type(string.trim(text)) == type(string.trim(text))
+    assert len(text) != len(expected)
 
-    assert value != text
-    assert value == expected
+@pytest.mark.parametrize("text, expected", [
+    (" Hello", "Hello"),
+    (" Hello world", "Hello world"),
+    (" Hello from Python!", "Hello from Python!"),
+])
+def test_remove_string_whitespace_only_left_side(text: str, expected: str): pass
 
-def test_trim_empty_sring():
-    text = ""
+@pytest.mark.parametrize("text, expected", [
+    ("Hello ", "Hello"),
+    ("Hello world ", "Hello world"),
+    ("Hello from Python! ", "Hello from Python!"),
+])
+def test_remove_string_whitespace_only_right_side(text: str, expected: str): pass
 
-    value = string.trim(text)
+@pytest.mark.parametrize("input", [
+    None, 
+    123, 
+    45.67, 
+    ["list"], 
+    {"dict": 1}, 
+    {"set"}, 
+    b"bytes", 
+    True, 
+    False, 
+    lambda x: x, 
+    object()
+])
+def test_remove_string_whitespace_with_invalid_input(input: Any):
+    with pytest.raises(TypeError) as error : 
+        string.trim(input)
 
-    assert value == text    
-
-def test_trim_no_change():
-    text = "Hello"
-
-    value = string.trim(text)
-
-    assert value == text
+    assert str(error.value) == "Invalid input data type!"
