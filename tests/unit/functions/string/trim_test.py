@@ -10,7 +10,7 @@ from typing import Any
 ])
 def test_remove_string_whitespace_both_side(text: str, expected: str):
     assert string.trim(text) == expected
-    assert type(string.trim(text)) == type(string.trim(text))
+    assert type(string.trim(text)) == type(expected)
     assert len(text) != len(expected)
 
 @pytest.mark.parametrize("text, expected", [
@@ -18,14 +18,20 @@ def test_remove_string_whitespace_both_side(text: str, expected: str):
     (" Hello world", "Hello world"),
     (" Hello from Python!", "Hello from Python!"),
 ])
-def test_remove_string_whitespace_only_left_side(text: str, expected: str): pass
+def test_remove_string_whitespace_only_left_side(text: str, expected: str):
+    assert string.trim(text) == expected
+    assert type(string.trim(text)) == type(expected)
+    assert len(text) != len(expected)
 
 @pytest.mark.parametrize("text, expected", [
     ("Hello ", "Hello"),
     ("Hello world ", "Hello world"),
     ("Hello from Python! ", "Hello from Python!"),
 ])
-def test_remove_string_whitespace_only_right_side(text: str, expected: str): pass
+def test_remove_string_whitespace_only_right_side(text: str, expected: str):
+    assert string.trim(text) == expected
+    assert type(string.trim(text)) == type(expected)
+    assert len(text) != len(expected)
 
 @pytest.mark.parametrize("input", [
     None, 
