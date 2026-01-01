@@ -6,6 +6,7 @@ from .join import join
 from .contains import contains
 from .explode import explode
 from .split import split
+from .at import at
 
 __all__ = [
     "trim",
@@ -15,5 +16,6 @@ __all__ = [
     "join",
     "contains",
     "explode",
-    "split"
+    "split",
+    "at"
 ]
