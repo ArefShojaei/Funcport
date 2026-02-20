@@ -7,6 +7,15 @@ from .contains import contains
 from .explode import explode
 from .split import split
 from .at import at
+from .ucfirst import ucfirst
+from .lcfirst import lcfirst
+from .contact import contact
+from .is_empty import is_empty
+from .ucwords import ucwords
+from .lcwords import lcwords
+from .reverse import reverse
+from .filetype import filetype
+from .pathinfo import pathinfo
 
 __all__ = [
     "trim",
@@ -17,5 +26,14 @@ __all__ = [
     "contains",
     "explode",
     "split",
-    "at"
+    "at",
+    "ucfirst",
+    "lcfirst",
+    "contact",
+    "is_empty",
+    "ucwords",
+    "lcwords",
+    "reverse",
+    "filetype",
+    "pathinfo",
 ]
