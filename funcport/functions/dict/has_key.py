@@ -1,0 +1,1 @@
+def has_key(key: str, hystack: dict): pass
