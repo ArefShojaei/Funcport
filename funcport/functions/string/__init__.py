@@ -16,6 +16,7 @@ from .lcwords import lcwords
 from .reverse import reverse
 from .filetype import filetype
 from .pathinfo import pathinfo
+from .word_count import word_count
 
 __all__ = [
     "trim",
@@ -36,4 +37,5 @@ __all__ = [
     "reverse",
     "filetype",
     "pathinfo",
+    "word_count",
 ]
